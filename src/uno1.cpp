@@ -14,7 +14,7 @@ void setup() {
   // Pré-calcula todos os pontos de um ciclo da senoide e os armazena no vetor
   for (int i = 0; i < PERIODO; i++) {
     float angle = 2.0 * PI * i / PERIODO;
-    sineTable[i] = (uint8_t)(127 * sin(angle) + 127); // Mapeia a senoide de [-1, 1] para [0, 255]
+    sineTable[i] = (uint8_t)(120.0 * (sin(angle) + 1.1)); // Mapeia a senoide de [-1, 1] para [0, 255]
   }
 }
 

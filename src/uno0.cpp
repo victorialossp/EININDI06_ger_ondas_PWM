@@ -8,7 +8,6 @@ byte count = 0;
 
 void setup() // Codigo de configuração
 {
-  Serial.begin(19200);
   pinMode(pinPWM, OUTPUT);
 }
 
@@ -20,7 +19,7 @@ void loop()
   if ((currentTimeMS - previousTimeMS) >= TIME_RESOLUTION)
   {
     previousTimeMS = currentTimeMS;
-    analogWrite(pinPWM, 127 * sin(2 * PI * count / PERIODO) + 127);
+    analogWrite(pinPWM, (uint8_t)(120.0 * (sin(2 * PI * count / PERIODO) + 1.1)));
     count = (count + 1) % PERIODO;  
   }
 }

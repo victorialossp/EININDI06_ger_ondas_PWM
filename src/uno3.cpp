@@ -17,8 +17,7 @@ volatile uint16_t indexStepWave = 0; // Índice atual da tabela
 unsigned long stepWaveMicroSec = 0;  // Tempo entre cada ponto
 
 // Recalcula a tabela da metade da senoide e o delay entre os pontos
-void recalcSineTable() {
-  // Para a metade de um ciclo: ângulo varia de 0 a π.
+void recalcSineTable() {  // Para a metade de um ciclo: ângulo varia de 0 a π.
   // Se houver mais de um ponto, usamos (resolutionHalfWave - 1) para que o último valor se aproxime de π.
   for (uint16_t i = 0; i < resolutionHalfWave; i++) {
     float angle = (resolutionHalfWave > 1) ? (PI * i / (resolutionHalfWave - 1)) : 0;    
